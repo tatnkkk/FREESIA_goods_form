@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ライブ物販 注文フォーム</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f4f4f4; }
+    .product { border: 1px solid #ccc; padding: 10px; margin: 15px 0; background: white; position: relative; }
+    .product img { max-width: 100px; display: block; margin-bottom: 5px; }
+    label, select, input { display: block; margin: 5px 0; }
+    .subtotal { font-weight: bold; margin-top: 5px; }
+    .total { font-size: 20px; margin-top: 20px; }
+    .confirm { margin-top: 20px; padding: 15px; background: #e6ffe6; border: 1px solid #a4d4a4; }
+    button { padding: 10px 20px; font-size: 16px; background: #00aaff; color: white; border: none; border-radius: 4px; }
+    .tag { position: absolute; top: 10px; right: 10px; background: red; color: white; padding: 2px 6px; font-size: 12px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <h1>🎤 ライブ物販 注文フォーム</h1>
+
+  <form id="orderForm">
+    <div class="product">
+      <span class="tag">会場限定</span>
+      <img src="https://via.placeholder.com/100x100?text=Tshirt+White" alt="Tシャツ白">
+      <strong>Tシャツ（白） ¥3,000</strong>
+      <label>数量：
+        <select id="tshirt_white" name="tshirt_white">
+          <option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+        </select>
+      </label>
+      <div class="subtotal" id="subtotal_tshirt_white">小計：¥0</div>
+    </div>
+
+    <div class="product">
+      <span class="tag">セット割引</span>
+      <img src="https://via.placeholder.com/100x100?text=Set+Item" alt="セット商品">
+      <strong>セット商品（Tシャツ+タオル） ¥4,200</strong>
+      <label>数量：
+        <select id="set_item" name="set_item">
+          <option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+        </select>
+      </label>
+      <div class="subtotal" id="subtotal_set_item">小計：¥0</div>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/100x100?text=Sticker" alt="ステッカー">
+      <strong>ステッカー ¥500</strong>
+      <label>数量：
+        <select id="sticker" name="sticker">
+          <option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+        </select>
+      </label>
+      <div class="subtotal" id="subtotal_sticker">小計：¥0</div>
+    </div>
+
+    <label><strong>🧾 お名前 or 呼び出し番号（任意）</strong>
+      <input type="text" name="customer_id" placeholder="番号5 など" style="width:100%; padding:5px;">
+    </label>
+
+    <label><strong>💳 支払い方法：</strong></label>
+    <label><input type="radio" name="payment" value="現金" required> 現金</label>
+    <label><input type="radio" name="payment" value="PayPay"> PayPay</label>
+    <label><input type="radio" name="payment" value="クレジットカード"> クレジットカード</label>
+
+    <div class="total">
+      🧾 合計金額：<span id="totalPrice">¥0</span>
+    </div>
+
+    <button type="button" onclick="confirmOrder()">注文を確定する</button>
+
+    <div class="confirm" id="confirmation" style="display:none;">
+      <h2>🧾 注文控え</h2>
+      ✅ ご注文内容が確定しました！この画面をスタッフにご提示ください。<br>
+      <div id="orderSummary"></div>
+    </div>
+  </form>
+
+  <script>
+    const prices = {
+      tshirt_white: 3000,
+      set_item: 4200,
+      sticker: 500
+    };
+
+    function calculateTotal() {
+      let total = 0;
+      for (const item in prices) {
+        const select = document.getElementById(item);
+        if (select) {
+          const quantity = parseInt(select.value) || 0;
+          const subtotal = quantity * prices[item];
+          document.getElementById('subtotal_' + item).textContent = '小計：¥' + subtotal.toLocaleString();
+          total += subtotal;
+        }
+      }
+      document.getElementById('totalPrice').textContent = '¥' + total.toLocaleString();
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      calculateTotal();
+      document.querySelectorAll("select").forEach(select => {
+        select.addEventListener("change", calculateTotal);
+      });
+    });
+
+    function confirmOrder() {
+      let summary = '';
+      let total = 0;
+      for (const item in prices) {
+        const select = document.getElementById(item);
+        const quantity = parseInt(select.value);
+        if (quantity > 0) {
+          const itemName = {
+            tshirt_white: 'Tシャツ（白）',
+            set_item: 'セット商品',
+            sticker: 'ステッカー'
+          }[item];
+          const subtotal = prices[item] * quantity;
+          summary += `・${itemName} × ${quantity} = ¥${subtotal.toLocaleString()}<br>`;
+          total += subtotal;
+        }
+      }
+      const customerId = document.querySelector('[name="customer_id"]').value || 'なし';
+      const paymentMethod = document.querySelector('input[name="payment"]:checked');
+      if (!paymentMethod) {
+        alert("支払方法を選んでください");
+        return;
+      }
+      summary += `<br>🧾 合計：¥${total.toLocaleString()}<br>`;
+      summary += `💳 支払方法：${paymentMethod.value}<br>`;
+      summary += `👤 呼び出し番号：${customerId}`;
+
+      document.getElementById('orderSummary').innerHTML = summary;
+      document.getElementById('confirmation').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
