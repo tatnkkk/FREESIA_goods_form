@@ -213,13 +213,9 @@
         }
       }
       const customerId = document.querySelector('[name="customer_id"]').value || 'なし';
-      const paymentMethod = document.querySelector('input[name="payment"]:checked');
-      if (!paymentMethod) {
-        alert("支払方法を選んでください");
-        return;
+      
       }
       summary += `<br>🧾 合計：¥${total.toLocaleString()}<br>`;
-      summary += `💳 支払方法：${paymentMethod.value}<br>`;
       summary += `👤 呼び出し番号：${customerId}`;
 
       document.getElementById('orderSummary').innerHTML = summary;
